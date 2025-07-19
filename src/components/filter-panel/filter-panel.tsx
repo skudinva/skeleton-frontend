@@ -71,14 +71,14 @@ const FilterPanel: React.FC = () => {
 	const removeFilter = (key: keyof FilterValues, value?: string) => {
 		const newFilters = { ...appliedFilters }
 
-		if (value && Array.isArray(newFilters[key])) {
-			// Удаляем значение из массива (для статусов)
-			newFilters[key] = (newFilters[key] as string[]).filter(v => v !== value)
-			if ((newFilters[key] as string[]).length === 0) {
-				delete newFilters[key]
+		if (value && key === 'status' && Array.isArray(newFilters.status)) {
+			// Удаляем конкретный статус
+			newFilters.status = newFilters.status.filter(v => v !== value)
+			if (newFilters.status.length === 0) {
+				delete newFilters.status
 			}
 		} else {
-			// Удаляем весь фильтр
+			// Удаляем весь фильтр по ключу
 			delete newFilters[key]
 		}
 
@@ -143,7 +143,7 @@ const FilterPanel: React.FC = () => {
 
 			<Modal
 				title='Фильтры'
-				visible={isModalVisible}
+				open={isModalVisible}
 				onOk={handleOk}
 				onCancel={handleCancel}
 				width={600}
