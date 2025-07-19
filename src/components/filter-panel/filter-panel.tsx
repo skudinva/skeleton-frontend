@@ -69,7 +69,7 @@ const FilterPanel: React.FC = () => {
 	}
 
 	const removeFilter = (key: keyof FilterValues, value?: string) => {
-		let newFilters = { ...appliedFilters }
+		const newFilters = { ...appliedFilters }
 
 		if (value && Array.isArray(newFilters[key])) {
 			// Удаляем значение из массива (для статусов)
