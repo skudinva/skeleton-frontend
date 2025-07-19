@@ -1,5 +1,6 @@
 'use client'
 
+import { MyComponent } from '@/components/filter-component'
 import FilterPanel from '@/components/filter-panel/filter-panel'
 import '@ant-design/v5-patch-for-react-19'
 import { Card, Space, Typography } from 'antd'
@@ -15,6 +16,7 @@ export default function Home() {
 
 				<Space style={{ marginTop: '1rem' }}>
 					<FilterPanel />
+					<MyComponent />
 				</Space>
 			</Card>
 		</div>
