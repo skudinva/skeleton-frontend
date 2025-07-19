@@ -17,7 +17,6 @@ const FilterPanel: React.FC = () => {
 	const [hasFilters, setHasFilters] = useState(false)
 
 	const showModal = () => {
-		// При открытии модалки заполняем форму текущими значениями фильтров
 		form.setFieldsValue(appliedFilters)
 		setIsModalVisible(true)
 	}
@@ -59,7 +58,7 @@ const FilterPanel: React.FC = () => {
 
 			<Modal
 				title='Фильтры'
-				visible={isModalVisible}
+				open={isModalVisible}
 				onOk={handleOk}
 				onCancel={handleCancel}
 				width={600}
@@ -100,7 +99,6 @@ const FilterPanel: React.FC = () => {
 				</Form>
 			</Modal>
 
-			{/* Отображение примененных фильтров (опционально) */}
 			{hasFilters && (
 				<div style={{ marginTop: 16 }}>
 					<h4>Примененные фильтры:</h4>
