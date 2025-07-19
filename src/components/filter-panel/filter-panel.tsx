@@ -72,13 +72,11 @@ const FilterPanel: React.FC = () => {
 		const newFilters = { ...appliedFilters }
 
 		if (value && key === 'status' && Array.isArray(newFilters.status)) {
-			// Удаляем конкретный статус
 			newFilters.status = newFilters.status.filter(v => v !== value)
 			if (newFilters.status.length === 0) {
 				delete newFilters.status
 			}
 		} else {
-			// Удаляем весь фильтр по ключу
 			delete newFilters[key]
 		}
 
