@@ -13,9 +13,14 @@ export default function Home() {
 			<Card>
 				<Title level={2}>Next.js + Ant Design</Title>
 				<Text>Пример использования Ant Design в Next.js</Text>
-
 				<Space style={{ marginTop: '1rem' }}>
 					<FilterPanel />
+				</Space>
+			</Card>
+			<Card>
+				<Title level={2}>Next.js + Ant Design</Title>
+				<Text>Пример использования Ant Design в Next.js</Text>
+				<Space style={{ marginTop: '1rem' }}>
 					<MyComponent />
 				</Space>
 			</Card>
