@@ -1,7 +1,9 @@
-import AntdSSRProvider from '@/app/providers/AntdProvider'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+
 import './globals.css'
+import { ThemeProvider } from './providers/ThemeProvider'
+import { Providers } from './providers/providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,9 +18,11 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang='ru'>
+		<html lang='en' suppressHydrationWarning>
 			<body className={inter.className}>
-				<AntdSSRProvider>{children}</AntdSSRProvider>
+				<Providers>
+					<ThemeProvider>{children}</ThemeProvider>
+				</Providers>
 			</body>
 		</html>
 	)
